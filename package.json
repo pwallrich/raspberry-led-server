@@ -1,0 +1,22 @@
+{
+  "name": "raspberry-led-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pwallrich/raspberry-led-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pwallrich/raspberry-led-server/issues"
+  },
+  "homepage": "https://github.com/pwallrich/raspberry-led-server#readme",
+  "dependencies": {
+    "onoff": "^3.2.1"
+  }
+}
