@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/pwallrich/raspberry-led-server#readme",
   "dependencies": {
-    "onoff": "^3.2.1"
+    "pigpio": "^1.1.2"
   }
 }
