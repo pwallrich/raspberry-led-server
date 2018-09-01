@@ -5,18 +5,13 @@ var ledRed = new Gpio(17, {mode: Gpio.output});
 var ledGreen = new Gpio(22, {mode: Gpio.output});
 var ledBlue = new Gpio(24, {mode: Gpio.output});
 
-console.log("power up red");
-ledRed.pwmWrite(255);
+var leds = [ledRed, ledGreen, ledBlue];
+var i = 0;
 
-console.log("power up green");
-ledGreen.pwmWrite(255);
+var blinkInterval = setInterval(blinkLED, 250);
 
-console.log("power up blue");
-ledBlue.pwmWrite(255);
-
-setTimeout(function() {
-  console.log("Stop all after 5 seconds");
-  ledRed.pwmWrite(0);
-  ledBlue.pwmWrite(0);
-  ledGreen.pwmWrite(0);
-}, 5000);
+function blinkLED() {
+  leds[i].pwmWrite(0)
+  i = (i + 1) % leds.length;
+  leds[i].pwmWrite(255);
+}
