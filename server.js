@@ -18,7 +18,7 @@ http.listen(3000); //listen to port 8080
 console.log("listening on port 3000");
 
 function handler(req, res) {
-  fs.readFile(__dirname + 'public/rgb.html', function(err, data) {
+  fs.readFile(__dirname + '/public/rgb.html', function(err, data) {
     if(err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
       console.log(err);
