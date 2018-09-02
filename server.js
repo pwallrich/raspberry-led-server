@@ -1,13 +1,14 @@
 var Gpio = require('pigpio').Gpio;
-const express = require('express');
-const app = express();
-const port = 3000;
+var express = require('express'),
+  app = express();
+  port = process.env.PORT || 3000,
+  bodyParser = require('body-parser');
 
-apt.get('/', (request, response) => {
-  response.send('Hello from express');
-})
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-
+var routes = require('./api/routes/rootRoute');
+routes(app);
 
 app.listen(port, (err) => {
   if (err) {
