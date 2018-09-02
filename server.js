@@ -15,11 +15,13 @@ ledGreen.digitalWrite(0); // Turn GREEN LED off
 ledBlue.digitalWrite(0); // Turn BLUE LED off
 
 http.listen(3000); //listen to port 8080
+console.log("listening on port 3000");
 
 function handler(req, res) {
   fs.readFile(__dirname + 'public/rgb.html', function(err, data) {
     if(err) {
       res.writeHead(404, {'Content-Type': 'text/html'});
+      console.log(err);
       return res.end("404 Not Found");
     }
     res.writeHead(200, {'Content-Type': 'text/html'});
